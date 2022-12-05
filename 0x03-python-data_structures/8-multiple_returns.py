@@ -1,5 +1,8 @@
 #!/usr/bin/python3
 def multiple_returns(sentence):
-    a_tuple = (len(sentence))
-    b_tuple = (sentence[0])
-    return (a_tuple, b_tuple)
+    lenght = (len(sentence))
+    first = (sentence[0])
+    if lenght == 0:
+        return (lenght, None)
+    else:
+        return (lenght, first)
