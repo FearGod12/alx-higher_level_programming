@@ -55,3 +55,11 @@ Traceback (most recent call last):
     raise TypeError("last_name must be a string")
 TypeError: last_name must be a string
 
+>>> say_my_name("bob") #doctest: +REPORT_NDIFF, +NORMALIZE_WHITESPACE
+My name is bob 
+>>>
+>>>
+>>> say_my_name("") #doctest: +REPORT_NDIFF, +NORMALIZE_WHITESPACE
+My name is 
+>>>
+

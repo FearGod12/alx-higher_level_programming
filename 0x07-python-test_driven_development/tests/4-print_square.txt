@@ -1,0 +1,84 @@
+'''the 4-print_square module'''
+=============================================
+series of tests for 4-print_square function
+==============================================	
+
+	lets import the function
+-------------------------------------------------
+
+>>> print_square = __import__("4-print_square").print_square
+
+	passing positive integers
+
+>>> print_square(4)
+####
+####
+####
+####
+
+	passing zero (0)
+>>> print_square(0)
+
+>>> print_square(10)
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+
+	passing negative integers
+
+>>> print_square(-1)
+Traceback (most recent call last):
+...
+    raise ValueError("size must be >= 0")
+ValueError: size must be >= 0
+
+	passing Boolean
+
+>>> print_square(True)
+Traceback (most recent call last):
+...
+    raise TypeError("size must be an integer")
+TypeError: size must be an integer
+
+	passing string
+>>> print_square("string")
+Traceback (most recent call last):
+...
+    raise TypeError("size must be an integer")
+TypeError: size must be an integer
+
+	passing empty argument
+>>> print_square()
+Traceback (most recent call last):
+...
+TypeError: print_square() missing 1 required positional argument: 'size'
+
+	passing None
+>>> print_square(None)
+Traceback (most recent call last):
+...
+    raise TypeError("size must be an integer")
+TypeError: size must be an integer
+
+	passing float
+
+>>> print_square(3.0)
+Traceback (most recent call last):
+...
+    raise TypeError("size must be an integer")
+TypeError: size must be an integer
+
+	passing negative float
+
+>>> print_square(-0.3)
+Traceback (most recent call last):
+...
+    raise TypeError("size must be an integer")
+TypeError: size must be an integer
