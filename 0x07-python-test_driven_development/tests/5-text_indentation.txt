@@ -1,0 +1,111 @@
+this module contains series of tests for function text_indentation()
+=====================================================================
+
+	first of all import the function
+=====================================================================
+
+>>> text_indentation = __import__ ("5-text_indentation").text_indentation
+
+	passing multi-line text
+
+>>> text_indentation("Non autem hoc: igitur ne illud quidem. Fortasse id optimum, sed ubi illud: \
+... Plus semper voluptatis? Teneo, inquit, finem illi videri nihil dolere. \
+... Transfer idem ad modestiam vel temperantiam, quae est moderatio cupiditatum ")
+Non autem hoc:
+<BLANKLINE>
+igitur ne illud quidem.
+<BLANKLINE>
+Fortasse id optimum, sed ubi illud:
+<BLANKLINE>
+Plus semper voluptatis?
+<BLANKLINE>
+Teneo, inquit, finem illi videri nihil dolere.
+<BLANKLINE>
+Transfer idem ad modestiam vel temperantiam, quae est moderatio cupiditatum
+
+	passing text with special specified characters
+
+>>> text_indentation("Non autem hoc: igitur ne illud quidem. Fortasse id optimum, sed ubi illud: ")
+Non autem hoc:
+<BLANKLINE>
+igitur ne illud quidem.
+<BLANKLINE>
+Fortasse id optimum, sed ubi illud:
+<BLANKLINE>
+
+	passing empty text
+
+>>> text_indentation("")
+
+	passing nothing
+
+>>> text_indentation()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+	passing space character
+
+>>> text_indentation("  ")
+
+	passing space and newline character
+
+>>> text_indentation(" \n ")
+
+	passing newline in between text
+
+>>> text_indentation("\n chukwudi")
+chukwudi
+	
+	passing integers
+
+>>> text_indentation(89)
+Traceback (most recent call last):
+...
+    raise TypeError("text must be a string")
+TypeError: text must be a string
+
+	passing float
+
+>>> text_indentation(8.9)
+Traceback (most recent call last):
+...
+    raise TypeError("text must be a string")
+TypeError: text must be a string
+
+	passing None
+
+>>> text_indentation(None)
+Traceback (most recent call last):
+...
+    raise TypeError("text must be a string")
+TypeError: text must be a string
+
+	passing keyword
+
+>>> text_indentation(str)
+Traceback (most recent call last):
+...
+    raise TypeError("text must be a string")
+TypeError: text must be a string
+
+	passing False
+
+>>> text_indentation(False)
+Traceback (most recent call last):
+...
+    raise TypeError("text must be a string")
+TypeError: text must be a string
+
+	passing special characters with newline character
+
+>>> text_indentation(".\n?\n\n:")
+.
+<BLANKLINE>
+<BLANKLINE>
+?
+<BLANKLINE>
+<BLANKLINE>
+<BLANKLINE>
+:
+<BLANKLINE>
