@@ -8,6 +8,7 @@ class Rectangle:
     """Rectangle class defined by width and height."""
 
     number_of_instances = 0
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         self.width = width
@@ -52,7 +53,7 @@ class Rectangle:
             return rect
         for h in range(self.__height):
             for w in range(self.__width):
-                rect += "#"
+                rect += str(self.print_symbol)
             if h != self.__height - 1:
                 rect += "\n"
         return rect
