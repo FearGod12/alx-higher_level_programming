@@ -1,21 +1,15 @@
 #!/usr/bin/python3
-""" contains Class Rectabgle with
-instance attribut : width and height
-property setters :def width(self, value), def height(self, value)
-property getters : def width(self), def height(self)
+"""Rectangle class
+Defines a Rectangle class.
 """
 
 
 class Rectangle:
-    """Rectangle class with instance methods
-    getters- width() and height()
-    setters - height(value) and width(value)
-    where values must be an integer greater than 0
-    """
+    """Rectangle class defined by width and height."""
 
     def __init__(self, width=0, height=0):
         self.width = width
-        self.heigth = height
+        self.height = height
 
     @property
     def width(self):
@@ -40,12 +34,3 @@ class Rectangle:
         if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
-
-
-if __name__ == '__main__':
-    my_rectangle = Rectangle(2, 4)
-    print(my_rectangle.__dict__)
-
-    my_rectangle.width = 10
-    my_rectangle.height = 3
-    print(my_rectangle.__dict__)
