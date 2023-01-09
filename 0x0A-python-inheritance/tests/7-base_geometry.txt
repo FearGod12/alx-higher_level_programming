@@ -82,4 +82,3 @@ Traceback (most recent call last):
     raise TypeError("{} must be an integer".format(name))
 TypeError: string must be an integer
 >>> bg.integer_validator("string", 1200000000000000000000000000000000000000000000000000000000000000000000000)
-
