@@ -1,4 +1,4 @@
-#!/usr/bin/pythonb3
+#!/usr/bin/python3
 '''contains a Public instance method: def area(self): that raises an
 Exception with the message area() is not implemented'''
 
