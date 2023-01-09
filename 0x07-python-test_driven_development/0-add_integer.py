@@ -10,7 +10,7 @@ def add_integer(a, b=98):
     '''adds two integers
     numbers must be integer or float otherwise raise an exception
     if any is float then cast into integer'''
-    if not type(a) in [int, float]:
+    if a is None or not type(a) in [int, float]:
         raise TypeError("a must be an integer")
     elif not type(b) in [int, float]:
         raise TypeError("b must be an integer")
