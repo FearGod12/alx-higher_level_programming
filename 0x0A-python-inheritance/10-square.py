@@ -10,7 +10,7 @@ class Square(Rectangle):
     '''class of squares inherited from
     class Rectangle'''
 
-    def __int__(self, size):
+    def __init__(self, size):
         '''constructor for
         square object'''
         self.integer_validator("size", size)
