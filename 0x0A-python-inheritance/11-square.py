@@ -10,7 +10,7 @@ class Square(Rectangle):
     '''class of squares inherited from
     class Rectangle'''
 
-    def __int__(self, size):
+    def __init__(self, size):
         '''constructor for
         square object'''
         self.integer_validator("size", size)
@@ -21,3 +21,8 @@ class Square(Rectangle):
         ''' returns the area of square
         size multiplied by size'''
         return self.__size ** 2
+
+    def __str__(self):
+        '''prints square object nicely o the screen
+        '''
+        return f"[Square] {self.__size}/{self.__size}"
