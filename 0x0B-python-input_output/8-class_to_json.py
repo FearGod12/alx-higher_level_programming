@@ -1,4 +1,4 @@
-#!/usr/bin/pyhton3
+#!/usr/bin/python3
 '''function that returns the
 dictionary description with simple data structure
 '''
