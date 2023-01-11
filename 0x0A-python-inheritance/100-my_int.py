@@ -4,13 +4,12 @@
 
 
 class MyInt(int):
-    '''rebel class from int class
-    == and != produces reversed result'''
+    """Contrary rebel class of int"""
 
     def __eq__(self, n2):
-        '''returns the opposite of __eq__'''
-        return not super().__eq__(n2)
+        """Returns the opposite of __eq__"""
+        return super().__ne__(n2)
 
-    def __ne___(self, n2):
-        '''returns the opposite of __ne__'''
-        return not super().__ne__(n2)
+    def __ne__(self, n2):
+        """Returns the opposite of __ne__"""
+        return super().__eq__(n2)
