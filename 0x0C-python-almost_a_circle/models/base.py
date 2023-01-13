@@ -23,7 +23,23 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
+        '''returns the JSON string representation of list_dictionaries'''
         if list_dictionaries is None or len(list_dictionaries) < 1:
             return "\"[]\""
         else:
             return json.dumps(list_dictionaries)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        '''writes the JSON string representation of list_objs to a file
+        list_objs is a list of instances who inherits of Base
+        example: list of Rectangle or list of Square instances
+    If list_objs is None, save an empty list
+    The filename must be: <Class name>.json - example: Rectangle.json'''
+
+        alist = []
+        if list_objs is not None:
+            for each in list_objs:
+                alist.append(each.to_dictionary())
+        with open(f"{cls.__name__}.json", mode='w', encoding='utf-8') as afile:
+            afile.write(cls.to_json_string(alist))
