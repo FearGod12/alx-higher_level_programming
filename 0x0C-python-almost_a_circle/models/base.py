@@ -3,6 +3,7 @@
 :Base with its attributes and methods
 '''
 import json
+import os
 
 
 class Base:
@@ -61,3 +62,20 @@ class Base:
             dummy = cls(5, 5)
             dummy.update(**dictionary)
             return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        ''' returns a list of instances from json file'''
+
+        if os.path.exists("{cls.__name__}.json") is False:
+            return []
+        llists = []
+        instances = []
+        with open(f"{cls.__name__}.json", mode='r', encoding='utf-8') as afile:
+            instances = cls.from_json_string(afile.read())
+            for each in instances:
+                llists.append(cls.create(**each))
+            return llists
+
+
+
