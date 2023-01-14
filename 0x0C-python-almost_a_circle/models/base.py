@@ -44,10 +44,20 @@ class Base:
         with open(f"{cls.__name__}.json", mode='w', encoding='utf-8') as afile:
             afile.write(cls.to_json_string(alist))
 
+    @staticmethod
     def from_json_string(json_string):
         '''returns the list of the JSON string
         representation json_string'''
         if json_string is None or json_string == "":
-            return []
+            empty = []
+            return empty
         else:
             return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        '''that returns an instance with all attributes already set'''
+        if dictionary is not None and type(dictionary) is dict:
+            dummy = cls(5, 5)
+            dummy.update(**dictionary)
+            return dummy
