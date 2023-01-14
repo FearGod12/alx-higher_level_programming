@@ -76,6 +76,3 @@ class Base:
             for each in instances:
                 llists.append(cls.create(**each))
             return llists
-
-
-
