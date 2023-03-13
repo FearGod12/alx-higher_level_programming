@@ -1,2 +1,4 @@
 HIGHER LEVEL LANGUAGES 
 1. PYTHON
+2. MySQL 
+3. Javascript 
