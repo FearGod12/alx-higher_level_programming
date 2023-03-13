@@ -1,4 +1,4 @@
-#0x12. JavaScript - Warm up
+<h1> JavaScript - Warm up</h1>
 
 <b>General learning objectives </b>
 <ol>
