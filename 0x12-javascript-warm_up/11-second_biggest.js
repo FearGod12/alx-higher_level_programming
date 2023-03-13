@@ -6,5 +6,5 @@ if (args.lenght < 4) {
   console.log(0);
 } else {
   array = args.slice(2).sort((a, b) => b - a);
-  console.log(array[1]);
+  console.log(Number(array[1]));
 }
