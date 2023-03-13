@@ -1,4 +1,4 @@
-<h1> JavaScript - Warm up</h1>
+<h1 style="color : green"> JavaScript - Warm up</h1>
 
 <b>General learning objectives </b>
 <ol>
