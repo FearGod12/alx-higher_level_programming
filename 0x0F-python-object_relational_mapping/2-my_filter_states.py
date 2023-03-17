@@ -11,7 +11,7 @@ if __name__ == "__main__":
                          passwd=sys.argv[2], db=sys.argv[3])
     cur = db.cursor()
     cur.execute(
-        "SELECT * FROM states WHERE name LIKE '{}' ORDER BY states.id;"
+        "SELECT * FROM states WHERE name LIKE '{:s}' ORDER BY states.id;"
         .format(sys.argv[4]))
     for row in cur.fetchall():
         print(row)
