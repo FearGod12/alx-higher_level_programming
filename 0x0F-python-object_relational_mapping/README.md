@@ -1,4 +1,4 @@
-<hi> 0x0F. Python - Object-relational mapping </h1>
+<h1> 0x0F. Python - Object-relational mapping </h1>
 <h2> Learning Objectives </h2>
 <ol>
 <h3><u>General</u></h3>
