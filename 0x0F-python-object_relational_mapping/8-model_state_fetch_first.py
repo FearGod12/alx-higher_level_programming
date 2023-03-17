@@ -18,4 +18,4 @@ if __name__ == '__main__':
     if (first_state is not None):
         print("{}: {}".format(first_state[0], first_state[1]))
     else:
-        print()
+        print("Nothing")
