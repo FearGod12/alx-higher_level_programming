@@ -2,10 +2,9 @@
 '''contains the class definition of a City.
 '''
 
-from sqlalchemy.ext.declaration import declaration_base
+from model_state import Base, State
 from sqlalchemy import String, Integer, Column, ForeignKey
-Base = declarative_base()
-
+from sqlalchemy.orm import relationship
 
 class City(Base):
     '''inherits from Base and links to the MySQL table cities
@@ -18,6 +17,7 @@ class City(Base):
     and is a foreign key to states.id
     '''
     __tablename__ = "cities"
-    id = Colunm(Integer, autoincrement=True, nullable=False, primary_key=True)
-    name = Colunm(String(128), nullable=False)
-    state_id = Colunm(Integer, nullable=False ForeignKey('states.id'))
+    id = Column(Integer, autoincrement=True, nullable=False, primary_key=True)
+    name = Column(String(128), nullable=False)
+    state_id = Column(Integer, ForeignKey('states.id'), nullable=False)
+    state = relationship("State", backref="cities")
