@@ -14,11 +14,11 @@ if __name__ == "__main__":
     r = requests.post(url, data={'q': q})
     try:
         converted = r.json()
-        if len(converted) == 0:
+        if not converted:
             print("No result")
         else:
             the_id = converted.get('id')
             the_name = converted.get('name')
             print("[{}] {}".format(the_id, the_name))
-    except requests.exceptions.JSONDecodeError:
+    except ValueError or requests.exceptions.JSONDecodeError:
         print("Not a valid JSON")
