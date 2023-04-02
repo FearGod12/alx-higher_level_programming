@@ -11,4 +11,4 @@ if __name__ == "__main__":
     s = requests.Session()
     s.auth = (username, passwd)
     response = s.get('https://api.github.com/user')
-    print(response.json()['id'])
+    print(response.json().get('id'))
