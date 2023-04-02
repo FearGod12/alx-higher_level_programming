@@ -20,5 +20,5 @@ if __name__ == "__main__":
             the_id = converted.get('id')
             the_name = converted.get('name')
             print("[{}] {}".format(the_id, the_name))
-    except (ValueError, requests.exceptions.JSONDecodeError):
+    except ValueError or requests.exceptions.JSONDecodeError:
         print("Not a valid JSON")
