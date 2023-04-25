@@ -11,11 +11,14 @@ request(url, (error, response, body) => {
   if (error) {
     console.error(error);
   } else {
-    const data = JSON.parse(body);
+    const data = JSON.parse(body).results;
     let number = 0;
-    for (let i = 0; i < data.results.length; i++) {
-      if (data.results[i].characters.includes('https://swapi-api.alx-tools.com/api/people/18/')) {
-        number++;
+
+    for (const result of data) {
+      for (const cha of result.characters) {
+        if (cha.endsWith('/18/')) {
+          number++;
+        }
       }
     }
     console.log(number);
