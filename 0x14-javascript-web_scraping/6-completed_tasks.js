@@ -12,12 +12,13 @@ request(process.argv[2], (error, response, body) => {
   } else {
     const todos = JSON.parse(body);
     const users = {};
-    for (let j = 1; j <= 10; j++) {
-      users[j] = 0;
-    }
+
     for (let i = 0; i < todos.length; i++) {
       if (todos[i].completed === true) {
-        users[todos[i].userId] += 1;
+        if (users[todos[i].userId] === undefined) {
+          users[todos[i].userId] = 0;
+        }
+        users[todos[i].userId]++;
       }
     }
     console.log(users);
